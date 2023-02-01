@@ -14,7 +14,7 @@ all_states = data.state.to_list()
 count = 0
 guessed_states = []
 
-while len(guessed_states) < 29:
+while len(guessed_states) < 28:
     answer_text = screen.textinput(title=f"{len(guessed_states)}/29 Correct guesses.", prompt="Guess another state.")
     answer_text = answer_text.title()
     if answer_text == "Exit":
@@ -28,10 +28,7 @@ while len(guessed_states) < 29:
         timmy.goto(int(state_data.x), int(state_data.y))
         timmy.write(f"{state_data.state.item()}", font=("Courier", 8, "normal"))
 
-missed_states = []
-for state in all_states:
-    if state not in guessed_states:
-        missed_states.append(state)
+missed_states = [state for state in all_states if state not in guessed_states]
 
 file = pandas.DataFrame(missed_states)
 file.to_csv("Learn.csv")
