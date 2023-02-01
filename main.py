@@ -9,7 +9,7 @@ turtle.shape(image)
 
 data = pandas.read_csv("states_data.csv.txt")
 all_states = data.state.to_list()
-print(len(all_states))
+
 # GAME VARIABLES:
 count = 0
 guessed_states = []
