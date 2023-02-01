@@ -11,7 +11,6 @@ data = pandas.read_csv("states_data.csv.txt")
 all_states = data.state.to_list()
 
 # GAME VARIABLES:
-count = 0
 guessed_states = []
 
 while len(guessed_states) < 28:
